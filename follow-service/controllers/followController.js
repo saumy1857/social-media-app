@@ -1,5 +1,5 @@
 const Follow = require('../models/Follow');
-const User = require('../models/User');
+const User = require('../../user-service/models/User');
 const { verifyToken } = require('../../common/utils/jwtUtils');
 
 exports.followUser = async (req, res) => {

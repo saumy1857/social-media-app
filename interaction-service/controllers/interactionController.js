@@ -15,7 +15,7 @@ exports.createComment = async (req, res) => {
 // Update Comment
 exports.updateComment = async (req, res) => {
   try {
-    const comment = await Comment.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const comment = await Comment.findByIdAndUpdate({_id:req.params.id}, {text:req.body.text});
     res.status(200).json(comment);
   } catch (error) {
     res.status(400).json({ error: error.message });
